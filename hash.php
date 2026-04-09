@@ -1,5 +1,5 @@
 <?php
-$motdepasse = "Benzinho0726";
+$motdepasse = "";
 $hash = password_hash($motdepasse, PASSWORD_DEFAULT);
 
 echo $hash;
