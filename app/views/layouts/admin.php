@@ -31,7 +31,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['level_access'] != 1) {
         </nav>
     </header>
     <main>
-        <h1>Dashboard Admin</h1>
+        <h1 class="text-center">Dashboard Admin</h1>
         
         <!-- Inclusion du contenu -->
         <?php require $content; ?>

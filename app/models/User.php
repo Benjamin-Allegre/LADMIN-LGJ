@@ -34,6 +34,38 @@ class User
         // Retourne l'utilisateur
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+    /**
+     * Récupérer tous les admins (level_access = 1)
+     */
+    public function getAdmins()
+    {
+        $stmt = $this->db->prepare("SELECT * FROM users WHERE level_access = 1");
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    /**
+     * Récupérer tous les commerciaux (level_access = 2)
+     */
+    public function getCommercials()
+    {
+        $stmt = $this->db->prepare("SELECT * FROM users WHERE level_access = 2");
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    /**
+     * Récupérer tous les clients (level_access = 3)
+     */
+    public function getClients()
+    {
+        $stmt = $this->db->prepare("SELECT * FROM users WHERE level_access = 3");
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 
 ?>
