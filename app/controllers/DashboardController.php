@@ -1,6 +1,7 @@
 <?php
 
 require_once 'app/models/User.php';
+require_once 'app/models/Prospect.php';
 
 class DashboardController
 {
@@ -12,11 +13,13 @@ class DashboardController
 
         // Instance du model
         $userModel = new User();
+        $prospectModel = new Prospect();
 
         // Variables par défaut
         $admins = [];
         $commercials = [];
         $clients = [];
+        $prospects = [];
 
         /**
          * Si admin → on charge toutes les données
@@ -25,6 +28,8 @@ class DashboardController
             $admins = $userModel->getAdmins();
             $commercials = $userModel->getCommercials();
             $clients = $userModel->getClients();
+            $prospects = $prospectModel->getAll();
+
         }
 
         /**
